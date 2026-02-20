@@ -10,18 +10,20 @@ import ServicesPage from './pages/ServicesPage';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTop from './components/scrolltotop';
+import { Analytics } from '@vercel/analytics/react';
 
 const App: React.FC = () => {
- 
+
 
   return (
     <Router>
       <div className="flex flex-col min-h-screen bg-[#05050a] text-white">
         <Navbar />
+        <Analytics />
         <ScrollToTop />
         <main className="flex-grow">
           <Routes>
-            
+
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<ServicesPage />} />

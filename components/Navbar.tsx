@@ -30,13 +30,23 @@ const Navbar: React.FC = () => {
     <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-[#05050a]/90 backdrop-blur-md py-3 shadow-lg' : 'bg-transparent py-5'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-400 rounded-lg flex items-center justify-center font-bold text-white shadow-lg">
-                G L F I
+          <Link to="/" className="flex items-center space-x-3 group">
+            <div className="relative w-12 h-12">
+              <img
+                src="/image/logoaslouseasfavicon.jpeg"
+                alt="GLFI Logo"
+                className="w-full h-full object-cover rounded-xl shadow-lg group-hover:scale-105 transition-transform duration-300"
+              />
+              <div className="absolute inset-0 rounded-xl shadow-[0_0_15px_rgba(59,130,246,0.3)] group-hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] transition-all" />
             </div>
-            <span className="text-xl font-bold tracking-tight text-white neumorph-card px-3 py-2 rounded-lg">
-              Grace <span className="text-cyan-500">Logistics</span>  Foods and Items <span className="text-blue-500">   Limited</span>
-            </span>
+            <div className="flex flex-col">
+              <span className="text-xl font-bold tracking-tight text-white leading-none">
+                Grace <span className="text-blue-500">Logistics</span>
+              </span>
+              <span className="text-[10px] font-medium text-gray-400 uppercase tracking-[0.2em] mt-1">
+                Foods & Items Limited
+              </span>
+            </div>
           </Link>
 
           <div className="hidden md:flex items-center space-x-8">
@@ -49,8 +59,8 @@ const Navbar: React.FC = () => {
                 {link.name}
               </Link>
             ))}
-            <Link 
-              to="/admin" 
+            <Link
+              to="/admin"
               className="flex items-center space-x-1 px-4 py-2 rounded-full border border-blue-500/50 hover:bg-blue-500/10 transition-all text-sm font-semibold"
             >
               <LogIn className="w-4 h-4" />
