@@ -2,13 +2,12 @@
 import React, { useState } from 'react';
 import { Plane, Ship, Package, ChevronDown, ChevronUp, CheckCircle2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { image } from 'framer-motion/client';
 
 const FAQItem: React.FC<{ question: string; answer: string }> = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="border-b border-white/5">
-      <button 
+      <button
         onClick={() => setIsOpen(!isOpen)}
         className="w-full py-6 flex justify-between items-center text-left hover:text-blue-400 transition-colors"
       >
@@ -17,9 +16,9 @@ const FAQItem: React.FC<{ question: string; answer: string }> = ({ question, ans
       </button>
       <AnimatePresence>
         {isOpen && (
-          <motion.div 
-            initial={{ height: 0, opacity: 0 }} 
-            animate={{ height: 'auto', opacity: 1 }} 
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="overflow-hidden"
@@ -37,7 +36,7 @@ const Services: React.FC = () => {
     {
       icon: <Plane className="w-12 h-12 text-blue-500" />,
       title: 'Air Cargo Service',
-      image:"https://appslinecargo.com/img/air2.jpg",
+      image: "https://appslinecargo.com/img/air2.jpg",
       description: 'We leverage top-tier air freight partners like DHL to ensure your goods reach any destination in the world within 3-7 business days.',
       process: ['Pickup & Verification', 'Customs Documentation', 'Priority Flight Booking', 'Last-mile Delivery'],
       benefits: 'Perfect for urgent shipments and perishables.'
@@ -45,7 +44,7 @@ const Services: React.FC = () => {
     {
       icon: <Ship className="w-12 h-12 text-blue-500" />,
       title: 'Sea Cargo Services',
-      image:"https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?q=80&w=1200&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?q=80&w=1200&auto=format&fit=crop",
       description: 'The most cost-effective method for bulk trade. We manage full container loads (FCL) and less than container loads (LCL).',
       process: ['Container Consolidation', 'Port Logistics', 'Ocean Transit Management', 'Destination Handling'],
       benefits: 'Best for heavy machinery and commercial inventory.'
@@ -53,7 +52,7 @@ const Services: React.FC = () => {
     {
       icon: <Package className="w-12 h-12 text-blue-500" />,
       title: 'Local Food Sourcing',
-      image:"https://scontent.flos5-3.fna.fbcdn.net/v/t39.30808-6/514635499_10162805825733340_7239844148348605557_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=e06c5d&_nc_ohc=SgxBLuk3rS8Q7kNvwFQQsyx&_nc_oc=AdloGuaBA8ZHBZy3iBfKjXEEeygN8kI2SdW6mUsc5HRqLLKPbRSOoSxyWsRjZmLrYzk&_nc_zt=23&_nc_ht=scontent.flos5-3.fna&_nc_gid=S8UaMbHNrrBvAtqiOY1uxg&oh=00_AfuzJXz0H3Obr-OyMPCZgy5JcxuXqLZG5OwwsRAwf9Frag&oe=699DF98F",
+      image: "https://scontent.flos5-3.fna.fbcdn.net/v/t39.30808-6/514635499_10162805825733340_7239844148348605557_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=e06c5d&_nc_ohc=SgxBLuk3rS8Q7kNvwFQQsyx&_nc_oc=AdloGuaBA8ZHBZy3iBfKjXEEeygN8kI2SdW6mUsc5HRqLLKPbRSOoSxyWsRjZmLrYzk&_nc_zt=23&_nc_ht=scontent.flos5-3.fna&_nc_gid=S8UaMbHNrrBvAtqiOY1uxg&oh=00_AfuzJXz0H3Obr-OyMPCZgy5JcxuXqLZG5OwwsRAwf9Frag&oe=699DF98F",
       description: 'We source directly from local farmers and markets across Nigeria. From Yam to Egusi, we ensure authenticity and quality.',
       process: ['Direct Farm Sourcing', 'Quality Inspection', 'Export-Grade Packaging', 'Compliance Labeling'],
       benefits: 'Supporting local economies, feeding the diaspora.'
@@ -74,15 +73,15 @@ const Services: React.FC = () => {
     <section id="services" className="py-24 bg-[#05050a] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
-          <motion.h2 
+          <motion.h2
             initial={{ y: 30, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} viewport={{ once: true }}
             transition={smoothTransition}
             className="text-blue-500 font-bold tracking-widest uppercase text-sm mb-3"
           >
             Global Reach
           </motion.h2>
-          <motion.h3 
-            initial={{ y: 30, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} viewport={{ once: true }} 
+          <motion.h3
+            initial={{ y: 30, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} viewport={{ once: true }}
             transition={{ ...smoothTransition, delay: 0.2 }}
             className="text-4xl md:text-5xl font-bold text-white"
           >
@@ -90,30 +89,30 @@ const Services: React.FC = () => {
           </motion.h3>
         </div>
 
-        <motion.div 
+        <motion.div
           className="space-y-32"
           initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }}
           variants={{ visible: { transition: { staggerChildren: 0.4 } } }}
         >
           {services.map((service, idx) => (
-            <motion.div 
-              key={idx} 
+            <motion.div
+              key={idx}
               variants={{ hidden: { y: 80, opacity: 0 }, visible: { y: 0, opacity: 1 } }}
               transition={smoothTransition}
               className={`flex flex-col ${idx % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'} items-center gap-16`}
             >
               <div className="md:w-1/2 relative rounded-3xl overflow-hidden shadow-2xl group">
                 <div className="absolute inset-0 bg-blue-600/20 mix-blend-overlay group-hover:bg-transparent transition-all duration-1000" />
-                <img 
-                   src={service.image}
-                   alt={service.title}
-                   className="w-full h-[450px] object-cover transition-transform duration-[2s] group-hover:scale-110"
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="w-full h-[450px] object-cover transition-transform duration-[2s] group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent flex items-end p-8">
-                   <div className="flex items-center space-x-4">
-                      {service.icon}
-                      <h4 className="text-3xl font-bold tracking-tight">{service.title}</h4>
-                   </div>
+                  <div className="flex items-center space-x-4">
+                    {service.icon}
+                    <h4 className="text-3xl font-bold tracking-tight">{service.title}</h4>
+                  </div>
                 </div>
               </div>
               <div className="md:w-1/2 space-y-8">
@@ -129,18 +128,18 @@ const Services: React.FC = () => {
                     ))}
                   </div>
                 </div>
-                <motion.div 
+                <motion.div
                   whileHover={{ scale: 1.02 }}
                   className="p-6 bg-white/5 rounded-2xl border border-white/10 italic text-gray-400 shadow-inner"
                 >
-                   " {service.benefits} "
+                  " {service.benefits} "
                 </motion.div>
               </div>
             </motion.div>
           ))}
         </motion.div>
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ ...smoothTransition, delay: 0.5 }}
