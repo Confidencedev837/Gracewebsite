@@ -36,7 +36,7 @@ const Admin: React.FC = () => {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    if (username === 'admin' && password === 'password123') {
+    if (username === 'admin' && password === 'confidjohn837') {
       setIsLoggedIn(true);
       setError('');
     } else setError('Invalid credentials');

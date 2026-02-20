@@ -11,10 +11,11 @@ import { Map, ShoppingCart, Truck, Globe } from 'lucide-react';
 const smoothTransition = { duration: 1.5, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] };
 
 const Home: React.FC = () => {
-  const [boy, setBoy] = useState(0);
-  useEffect(()=>{
-    alert(`welcome to ${boy}`)
-  })
+  // const [boy, setBoy] = useState(0);
+  // useEffect(()=>{
+  //   alert(`welcome to ${boy}`)
+  // })
+  useEffect(()=>{})
   return (
     <div>
       <Hero />

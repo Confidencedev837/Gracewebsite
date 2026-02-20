@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Plane, Ship, Package, ChevronDown, ChevronUp, CheckCircle2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { image } from 'framer-motion/client';
 
 const FAQItem: React.FC<{ question: string; answer: string }> = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,13 +37,15 @@ const Services: React.FC = () => {
     {
       icon: <Plane className="w-12 h-12 text-blue-500" />,
       title: 'Air Cargo Service',
+      image:"https://appslinecargo.com/img/air2.jpg",
       description: 'We leverage top-tier air freight partners like DHL to ensure your goods reach any destination in the world within 3-7 business days.',
       process: ['Pickup & Verification', 'Customs Documentation', 'Priority Flight Booking', 'Last-mile Delivery'],
       benefits: 'Perfect for urgent shipments and perishables.'
     },
     {
       icon: <Ship className="w-12 h-12 text-blue-500" />,
-      title: 'Sea Freight Service',
+      title: 'Sea Cargo Services',
+      image:"https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?q=80&w=1200&auto=format&fit=crop",
       description: 'The most cost-effective method for bulk trade. We manage full container loads (FCL) and less than container loads (LCL).',
       process: ['Container Consolidation', 'Port Logistics', 'Ocean Transit Management', 'Destination Handling'],
       benefits: 'Best for heavy machinery and commercial inventory.'
@@ -50,6 +53,7 @@ const Services: React.FC = () => {
     {
       icon: <Package className="w-12 h-12 text-blue-500" />,
       title: 'Local Food Sourcing',
+      image:"https://scontent.flos5-3.fna.fbcdn.net/v/t39.30808-6/514635499_10162805825733340_7239844148348605557_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=e06c5d&_nc_ohc=SgxBLuk3rS8Q7kNvwFQQsyx&_nc_oc=AdloGuaBA8ZHBZy3iBfKjXEEeygN8kI2SdW6mUsc5HRqLLKPbRSOoSxyWsRjZmLrYzk&_nc_zt=23&_nc_ht=scontent.flos5-3.fna&_nc_gid=S8UaMbHNrrBvAtqiOY1uxg&oh=00_AfuzJXz0H3Obr-OyMPCZgy5JcxuXqLZG5OwwsRAwf9Frag&oe=699DF98F",
       description: 'We source directly from local farmers and markets across Nigeria. From Yam to Egusi, we ensure authenticity and quality.',
       process: ['Direct Farm Sourcing', 'Quality Inspection', 'Export-Grade Packaging', 'Compliance Labeling'],
       benefits: 'Supporting local economies, feeding the diaspora.'
@@ -101,7 +105,7 @@ const Services: React.FC = () => {
               <div className="md:w-1/2 relative rounded-3xl overflow-hidden shadow-2xl group">
                 <div className="absolute inset-0 bg-blue-600/20 mix-blend-overlay group-hover:bg-transparent transition-all duration-1000" />
                 <img 
-                   src={`https://images.unsplash.com/photo-${idx === 0 ? '1544027993-37dbfe43562a' : idx === 1 ? '1494412574643-ff11b0a5c1c3' : '1586528116311-ad8dd3c8310d'}?q=80&w=1200&auto=format&fit=crop`}
+                   src={service.image}
                    alt={service.title}
                    className="w-full h-[450px] object-cover transition-transform duration-[2s] group-hover:scale-110"
                 />

@@ -4,10 +4,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { MapPin, ExternalLink, ChevronLeft, ChevronRight, Building2 } from 'lucide-react';
 
 const officeImages = [
-  'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop',
-  'https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=1200&auto=format&fit=crop',
-  'https://images.unsplash.com/photo-1570606518353-9372bad7b140?q=80&w=1200&auto=format&fit=crop',
-  'https://images.unsplash.com/photo-1577412647305-991150c7d163?q=80&w=1200&auto=format&fit=crop'
+  '/image/office1.jpeg',
+  '/image/office1.jpeg',
+  '/image/office1.jpeg',
+
 ];
 
 const OfficeSection: React.FC = () => {

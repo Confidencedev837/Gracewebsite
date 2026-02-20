@@ -1,7 +1,15 @@
-
 import React, { useState, useEffect } from 'react';
 import { Star, Quote, Loader2 } from 'lucide-react';
 import { getComments } from '../store';
+
+// Add your images here
+const avatarImages = [
+ "https://images.unsplash.com/photo-1723221907119-397c26c8f580?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fG5pZ2VyaWFuJTIwd29tYW58ZW58MHx8MHx8fDA%3D",
+ "https://images.unsplash.com/photo-1602058746258-e012b1c1197c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fG5pZ2VyaWFuJTIwd29tYW58ZW58MHx8MHx8fDA%3D",
+ "https://images.unsplash.com/photo-1723221906960-1c5a5febc9c3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bmlnZXJpYW4lMjBtYW58ZW58MHx8MHx8fDA%3D",
+ "https://plus.unsplash.com/premium_photo-1692873060123-59ef129f9bac?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8bmlnZXJpYW4lMjB3b21hbnxlbnwwfHwwfHx8MA%3D%3D",
+ 
+];
 
 const Testimonials: React.FC = () => {
   const [comments, setComments] = useState<any[]>([]);
@@ -42,10 +50,12 @@ const Testimonials: React.FC = () => {
                 <p className="text-gray-300 italic mb-8 leading-relaxed">
                   "{t.comment}"
                 </p>
-                <div className="flex items-center">
-                  <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-400 rounded-full flex items-center justify-center font-bold mr-4 text-sm text-white shadow-lg">
-                    {t.name.charAt(0)}
-                  </div>
+                <div className="flex items-center gap-4">
+                  <img
+                    src={avatarImages[idx % avatarImages.length]}
+                    alt={t.name}
+                    className="w-10 h-10 rounded-full object-cover border border-blue-500/30"
+                  />
                   <div>
                     <h4 className="font-bold text-white">{t.name}</h4>
                     <p className="text-xs text-blue-400">{new Date(t.$createdAt).toLocaleDateString()}</p>
