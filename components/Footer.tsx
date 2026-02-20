@@ -65,7 +65,7 @@ const Footer: React.FC = () => {
               </li>
               <li className="flex items-center space-x-3">
                 <MapPin className="w-4 h-4 text-blue-500" />
-                <span>No 12 Atari Ogun steet,
+                <span>No 12 Afari Ogun steet,
                    Oshodi Lagos, Nigeria</span>
               </li>
             </ul>
