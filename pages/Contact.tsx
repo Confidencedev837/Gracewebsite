@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const Contact: React.FC = () => {
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
@@ -16,6 +17,11 @@ const Contact: React.FC = () => {
 
   return (
     <div className="pt-32 pb-24">
+      <SEO
+        title="Contact Us"
+        description="Contact Grace Logistics Foods & Items (GLFI) for shipping quotes, food sourcing inquiries, or general logistics support. Based in Lagos, shipping worldwide."
+        ogUrl="https://gracelogisticsfoodanditems.vercel.app/contact"
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h1 className="text-5xl font-bold mb-6">Get in <span className="text-blue-500">Touch</span></h1>
@@ -74,16 +80,16 @@ const Contact: React.FC = () => {
           </div>
         </div>
 
-      <div className="mt-20 h-96 w-full rounded-3xl border border-white/5 overflow-hidden">
-  <iframe
-    src="https://maps.google.com/maps?q=No+12+Afari+Street,Oshodi,Lagos,Nigeria&output=embed&z=17"
-    width="100%"
-    height="100%"
-    style={{ border: 0 }}
-    allowFullScreen
-    loading="lazy"
-  />
-</div>
+        <div className="mt-20 h-96 w-full rounded-3xl border border-white/5 overflow-hidden">
+          <iframe
+            src="https://maps.google.com/maps?q=No+12+Afari+Street,Oshodi,Lagos,Nigeria&output=embed&z=17"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+          />
+        </div>
       </div>
     </div>
   );

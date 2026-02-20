@@ -48,8 +48,10 @@ const Hero: React.FC = () => {
           transition={smoothTransition}
           className="absolute inset-0"
         >
-          <div 
+          <div
             className="absolute inset-0 bg-cover bg-center scale-105"
+            role="img"
+            aria-label={slides[current].title}
             style={{ backgroundImage: `url(${slides[current].image})` }}
           >
             <div className="absolute inset-0 bg-gradient-to-r from-black via-black/60 to-transparent" />
@@ -57,7 +59,7 @@ const Hero: React.FC = () => {
 
           <div className="relative h-full flex items-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-2xl">
-              <motion.div 
+              <motion.div
                 initial={{ y: 30, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ ...smoothTransition, delay: 0.3 }}
@@ -65,8 +67,8 @@ const Hero: React.FC = () => {
               >
                 {slides[current].accent}
               </motion.div>
-              
-              <motion.h1 
+
+              <motion.h1
                 initial={{ y: 40, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ ...smoothTransition, delay: 0.5 }}
@@ -76,8 +78,8 @@ const Hero: React.FC = () => {
                   <span key={i} className={i % 2 === 1 ? 'text-blue-500' : ''}>{word} </span>
                 ))}
               </motion.h1>
-              
-              <motion.p 
+
+              <motion.p
                 initial={{ y: 40, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ ...smoothTransition, delay: 0.7 }}
@@ -85,21 +87,21 @@ const Hero: React.FC = () => {
               >
                 {slides[current].subtitle}
               </motion.p>
-              
-              <motion.div 
+
+              <motion.div
                 initial={{ y: 40, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ ...smoothTransition, delay: 0.9 }}
                 className="flex flex-col sm:flex-row gap-4"
               >
-                <a 
+                <a
                   href="#foodstuff"
                   className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl transition-all flex items-center justify-center space-x-2 shadow-[0_0_20px_rgba(37,99,235,0.4)]"
                 >
                   <span>Request Food Shipping</span>
                   <ArrowRight className="w-5 h-5" />
                 </a>
-                <a 
+                <a
                   href="#services"
                   className="px-8 py-4 bg-white/5 hover:bg-white/10 border border-white/10 text-white font-bold rounded-xl transition-all backdrop-blur-sm"
                 >

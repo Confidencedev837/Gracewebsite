@@ -1,10 +1,16 @@
 
 import React from 'react';
 import { Target, Heart, Shield, Award } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const About: React.FC = () => {
   return (
     <div className="pt-32 pb-24">
+      <SEO
+        title="About Us"
+        description="Learn about GLFI's 10+ years of expertise in global logistics and our mission to bridge distance through professional shipping and authentic Nigerian sourcing."
+        ogUrl="https://gracelogisticsfoodanditems.vercel.app/about"
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row items-center gap-16 mb-24">
           <div className="lg:w-1/2">
@@ -18,9 +24,9 @@ const About: React.FC = () => {
           </div>
           <div className="lg:w-1/2 relative">
             <div className="neumorph-card p-4">
-              <img 
-                src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=2070&auto=format&fit=crop" 
-                alt="Logistics center" 
+              <img
+                src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=2070&auto=format&fit=crop"
+                alt="Logistics center"
                 className="rounded-lg shadow-2xl"
               />
             </div>

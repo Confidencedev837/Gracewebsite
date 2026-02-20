@@ -3,22 +3,29 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ShieldCheck, Truck, PackageCheck, HeartHandshake } from 'lucide-react';
 import FoodstuffSection from '../components/FoodstuffSection';
+import SEO from '../components/SEO';
 
 const FoodShipping: React.FC = () => {
   return (
     <div className="pt-32">
+      <SEO
+        title="Foodstuff Shipping"
+        description="Specialized export-compliant food shipping from Nigeria. Sourced from 36 states, legally documented for US, UK, and EU delivery."
+        keywords="food shipping Nigeria, export food from Nigeria, crayfish shipping, palm oil shipping, Nigerian food export"
+        ogUrl="https://gracelogisticsfoodanditems.vercel.app/food-shipping"
+      />
       <section className="relative py-24 bg-[#0a0a14] overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-             <motion.h1 
-                initial={{ x: -30, opacity: 0 }} animate={{ x: 0, opacity: 1 }}
-                className="text-5xl md:text-7xl font-bold mb-8"
-              >
-                Foodstuff <span className="text-blue-500">Shipping</span> Specialized.
-              </motion.h1>
-              <p className="text-xl text-gray-400 leading-relaxed font-light mb-12">
-                We are more than a logistics company; we are your direct link to the heart of Nigeria. Our dedicated food shipping service ensures that local delicacies arrive safely, legally, and fresh.
-              </p>
+            <motion.h1
+              initial={{ x: -30, opacity: 0 }} animate={{ x: 0, opacity: 1 }}
+              className="text-5xl md:text-7xl font-bold mb-8"
+            >
+              Foodstuff <span className="text-blue-500">Shipping</span> Specialized.
+            </motion.h1>
+            <p className="text-xl text-gray-400 leading-relaxed font-light mb-12">
+              We are more than a logistics company; we are your direct link to the heart of Nigeria. Our dedicated food shipping service ensures that local delicacies arrive safely, legally, and fresh.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -28,7 +35,7 @@ const FoodShipping: React.FC = () => {
               { icon: <PackageCheck className="text-green-500" />, title: 'Secure Packing', desc: 'Double-walled and moisture-proof.' },
               { icon: <HeartHandshake className="text-purple-500" />, title: 'Sourcing Pros', desc: 'We source exactly what you need.' }
             ].map((item, i) => (
-              <motion.div 
+              <motion.div
                 key={i}
                 initial={{ y: 30, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: i * 0.1 }}
                 className="bg-[#05050a] p-8 rounded-2xl border border-white/5"
@@ -45,18 +52,18 @@ const FoodShipping: React.FC = () => {
       <FoodstuffSection />
 
       <section className="py-24 bg-[#05050a]">
-         <div className="max-w-7xl mx-auto px-4 text-center">
-            <h2 className="text-3xl font-bold mb-8">Ready to Ship?</h2>
-            <p className="text-gray-400 mb-12 max-w-2xl mx-auto">
-               Contact Mrs. Grace directly on WhatsApp for a personalized quote on your custom foodstuff list.
-            </p>
-            <a 
-              href="https://wa.me/2348033204246" 
-              className="inline-flex items-center space-x-3 bg-green-600 hover:bg-green-700 px-10 py-5 rounded-full font-bold text-white transition-all transform hover:scale-105"
-            >
-               <span>Chat with Mrs. Grace</span>
-            </a>
-         </div>
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold mb-8">Ready to Ship?</h2>
+          <p className="text-gray-400 mb-12 max-w-2xl mx-auto">
+            Contact Mrs. Grace directly on WhatsApp for a personalized quote on your custom foodstuff list.
+          </p>
+          <a
+            href="https://wa.me/2348033204246"
+            className="inline-flex items-center space-x-3 bg-green-600 hover:bg-green-700 px-10 py-5 rounded-full font-bold text-white transition-all transform hover:scale-105"
+          >
+            <span>Chat with Mrs. Grace</span>
+          </a>
+        </div>
       </section>
     </div>
   );

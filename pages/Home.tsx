@@ -7,6 +7,7 @@ import FoodstuffSection from '../components/FoodstuffSection';
 import Testimonials from '../components/Testimonials';
 import OfficeSection from '../components/OfficeSection';
 import CompanyLogos from '../components/CompanyLogos';
+import SEO from '../components/SEO';
 import { Map, ShoppingCart, Truck, Globe } from 'lucide-react';
 
 const smoothTransition = { duration: 1.5, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] };
@@ -15,6 +16,12 @@ const Home: React.FC = () => {
   useEffect(() => { })
   return (
     <div>
+      <SEO
+        title="Home"
+        description="Grace Logistics Foods & Items Limited (GLFI) offers professional air and sea cargo services and authentic Nigerian food sourcing from all 36 states to the global diaspora."
+        keywords="logistics, food shipping,Food stuff shipping Nigeria,Air cargo services,Sea cargo services, global cargo, GLFI, authentic Nigerian food"
+        ogUrl="https://gracelogisticsfoodanditems.vercel.app/"
+      />
       <Hero />
 
       {/* Storytelling Section */}
