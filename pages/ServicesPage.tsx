@@ -19,10 +19,10 @@ const ServicesPage: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-5xl md:text-7xl font-bold mb-6"
           >
-            Our Core <span className="text-blue-500">Logistics</span>
+            Best way to <span className="text-blue-500">send food from Nigeria</span> to abroad
           </motion.h1>
           <p className="text-gray-400 text-xl max-w-3xl mx-auto font-light">
-            We provide specialized cargo and sourcing services tailored to the needs of individual exporters and corporate importers alike.
+            Wondering <strong>how to ship Nigerian food to UK</strong> or if you <strong>can ship Nigerian food internationally</strong>? Our expert logistics and sourcing services provide a seamless, legal, and fast solution.
           </p>
         </div>
       </section>

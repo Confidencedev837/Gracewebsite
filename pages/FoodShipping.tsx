@@ -9,9 +9,9 @@ const FoodShipping: React.FC = () => {
   return (
     <div className="pt-32">
       <SEO
-        title="Foodstuff Shipping"
-        description="Specialized export-compliant food shipping from Nigeria. Sourced from 36 states, legally documented for US, UK, and EU delivery."
-        keywords="food shipping Nigeria, export food from Nigeria, crayfish shipping, palm oil shipping, Nigerian food export"
+        title="Ship Foodstuff from Nigeria to UK, USA & Canada | Affordable Delivery"
+        description="Nigerian groceries delivery UK, USA & Canada. Specialized export-compliant food shipping from Nigeria. Sourced from 36 states, legally documented for global delivery."
+        keywords="Nigerian food shipping to UK, Ship foodstuff from Nigeria to UK, Nigerian groceries delivery UK, Send food from Nigeria to USA, Nigerian food delivery Canada, Ship egusi stockfish crayfish to UK"
         ogUrl="https://gracelogisticsfoodanditems.vercel.app/food-shipping"
       />
       <section className="relative py-24 bg-[#0a0a14] overflow-hidden">
@@ -21,10 +21,10 @@ const FoodShipping: React.FC = () => {
               initial={{ x: -30, opacity: 0 }} animate={{ x: 0, opacity: 1 }}
               className="text-5xl md:text-7xl font-bold mb-8"
             >
-              Foodstuff <span className="text-blue-500">Shipping</span> Specialized.
+              Ship <span className="text-blue-500">Foodstuff</span> from Nigeria to UK, USA & Canada.
             </motion.h1>
             <p className="text-xl text-gray-400 leading-relaxed font-light mb-12">
-              We are more than a logistics company; we are your direct link to the heart of Nigeria. Our dedicated food shipping service ensures that local delicacies arrive safely, legally, and fresh.
+              We are more than a logistics company; we are your direct link to the heart of Nigeria. Our dedicated <strong>Nigerian groceries delivery UK</strong> service ensures that local delicacies like egusi, stockfish, and crayfish arrive safely, legally, and fresh.
             </p>
           </div>
 

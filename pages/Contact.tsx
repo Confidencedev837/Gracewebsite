@@ -18,8 +18,8 @@ const Contact: React.FC = () => {
   return (
     <div className="pt-32 pb-24">
       <SEO
-        title="Contact Us"
-        description="Contact Grace Logistics Foods & Items (GLFI) for shipping quotes, food sourcing inquiries, or general logistics support. Based in Lagos, shipping worldwide."
+        title="Contact Us - Professional Nigerian Food Supplier Lagos"
+        description="Contact GLFI for professional logistics and food sourcing. We are your reliable Nigerian food supplier in Lagos for global delivery."
         ogUrl="https://gracelogisticsfoodanditems.vercel.app/contact"
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

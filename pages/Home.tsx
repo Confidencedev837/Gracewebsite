@@ -17,9 +17,9 @@ const Home: React.FC = () => {
   return (
     <div>
       <SEO
-        title="Home"
-        description="Grace Logistics Foods & Items Limited (GLFI) offers professional air and sea cargo services and authentic Nigerian food sourcing from all 36 states to the global diaspora."
-        keywords="logistics, food shipping,Food stuff shipping Nigeria,Air cargo services,Sea cargo services, global cargo, GLFI, authentic Nigerian food"
+        title="Nigerian Food Shipping to UK & Global Cargo Services"
+        description="Ship foodstuff from Nigeria to UK, USA, and Canada. Grace Logistics Foods & Items (GLFI) is your affordable food shipping partner for authentic Nigerian groceries delivery."
+        keywords="Nigerian food shipping to UK, Ship foodstuff from Nigeria to UK, Nigerian groceries delivery UK, Send food from Nigeria to USA, Nigerian food delivery Canada, Affordable food shipping from Nigeria, Ship egusi, stockfish, crayfish to UK"
         ogUrl="https://gracelogisticsfoodanditems.vercel.app/"
       />
       <Hero />
@@ -39,10 +39,10 @@ const Home: React.FC = () => {
                 Our Story
               </div>
               <h2 className="text-4xl md:text-6xl font-bold leading-tight tracking-tight">
-                From All 36 States <br /><span className="text-blue-500">To Your Doorstep</span>
+                From All 36 States <br /><span className="text-blue-500">To Your Doorstep Anywhere in the World</span>
               </h2>
               <p className="text-xl text-gray-400 leading-relaxed font-light">
-                We believe that distance shouldn't separate you from the authentic taste of home. Our network of local agents traverses the vibrant markets of Nigeria—from the spice hubs of Kano to the palm oil regions of Delta.
+                We believe that distance shouldn't separate you from the authentic taste of home. Our network of local agents traverses the vibrant markets of Nigeria—from the spice hubs of Kano to the palm oil regions of Delta—providing the best <strong>Nigerian food shipping to UK</strong>, USA, and beyond.
               </p>
               <div className="grid grid-cols-2 gap-12">
                 <div className="space-y-4">
@@ -70,28 +70,28 @@ const Home: React.FC = () => {
                 transition={{ duration: 0.8 }}
                 src="/image/oil.jpeg"
                 className="rounded-3xl h-72 w-full object-cover shadow-2xl border border-white/5"
-                alt="Market scene"
+                alt="Ship foodstuff from Nigeria to UK - Palm Oil"
               />
               <motion.img
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.8 }}
                 src="/image/flour.jpeg"
                 className="rounded-3xl h-72 w-full object-cover shadow-2xl mt-12 border border-white/5"
-                alt="Nigerian food"
+                alt="Nigerian food delivery Canada - Yam Flour"
               />
               <motion.img
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.8 }}
                 src="/image/crayfish.jpeg"
                 className="rounded-3xl h-72 w-full object-cover shadow-2xl -mt-12 border border-white/5"
-                alt="Packaging"
+                alt="Ship egusi stockfish crayfish to UK"
               />
               <motion.img
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.8 }}
                 src="/image/fish.jpeg"
                 className="rounded-3xl h-72 w-full object-cover shadow-2xl border border-white/5"
-                alt="Shipping"
+                alt="Send food from Nigeria to USA - Dried Fish"
               />
             </motion.div>
           </div>

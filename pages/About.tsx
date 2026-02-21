@@ -7,16 +7,17 @@ const About: React.FC = () => {
   return (
     <div className="pt-32 pb-24">
       <SEO
-        title="About Us"
-        description="Learn about GLFI's 10+ years of expertise in global logistics and our mission to bridge distance through professional shipping and authentic Nigerian sourcing."
+        title="About Us - Nigerian Food Sourcing Agent & Supplier Lagos"
+        description="GLFI is a leading food sourcing agent in Nigeria, connecting you to authentic Nigerian food suppliers in Lagos. Buy Nigerian food items in bulk with ease."
+        keywords="Food sourcing agent Nigeria, Buy Nigerian food items in bulk, Nigerian food supplier Lagos, authentic Nigerian food"
         ogUrl="https://gracelogisticsfoodanditems.vercel.app/about"
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row items-center gap-16 mb-24">
           <div className="lg:w-1/2">
-            <h1 className="text-5xl font-bold mb-8">Redefining <span className="text-blue-500">Global Logistics</span> from Nigeria</h1>
+            <h1 className="text-5xl font-bold mb-8">Your Trusted <span className="text-blue-500">Food Sourcing Agent</span> in Nigeria</h1>
             <p className="text-gray-400 text-lg leading-relaxed mb-8">
-              GFI LIMITED was founded on the principles of trust, efficiency, and reliability. We recognized the challenges Nigerians abroad face in accessing authentic local foodstuffs and the complexities businesses encounter with international shipping.
+              GFI LIMITED was founded on the principles of trust, efficiency, and reliability. As a premier <strong>Nigerian food supplier in Lagos</strong>, we bridge the gap between local farmers and the global market, ensuring you can buy Nigerian food items in bulk with total confidence.
             </p>
             <p className="text-gray-400 text-lg leading-relaxed">
               Our mission is to simplify logistics. Whether it's a small box of spices for a family in London or several tons of industrial cargo, we treat every shipment with the same professional precision.

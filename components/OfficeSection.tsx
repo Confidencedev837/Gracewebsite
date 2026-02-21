@@ -33,8 +33,8 @@ const OfficeSection: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={smoothTransition}
@@ -45,11 +45,11 @@ const OfficeSection: React.FC = () => {
               <Building2 className="w-4 h-4" />
               <span>Visit Us In Person</span>
             </div>
-            
+
             <h2 className="text-4xl md:text-6xl font-bold leading-tight">
               Our Doors are <span className="text-blue-500">Always Open</span> For You
             </h2>
-            
+
             <p className="text-xl text-gray-400 leading-relaxed font-light">
               Experience the PGGS standard firsthand. Whether you're dropping off cargo, discussing bulk sourcing, or just need professional logistics advice, our team is ready to welcome you at our Lagos headquarters.
             </p>
@@ -65,16 +65,16 @@ const OfficeSection: React.FC = () => {
                   <p className="text-gray-400 leading-relaxed">No 12 Afari Ogun street oshodi, Lagos, Nigeria.</p>
                 </div>
               </div>
-              
-             <a 
-            href="https://www.google.com/maps/search/?api=1&query=No+12+Afari+Ogun+street+oshodi+Lagos+Nigeria"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center space-x-2 text-blue-400 font-bold hover:text-blue-300 transition-colors group/link relative z-20 cursor-pointer pointer-events-auto"
-          >
-            <span>Open in Google Maps</span>
-            <ExternalLink className="w-4 h-4 group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform" />
-          </a>
+
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=No+12+Afari+Ogun+street+oshodi+Lagos+Nigeria"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center space-x-2 text-blue-400 font-bold hover:text-blue-300 transition-colors group/link relative z-20 cursor-pointer pointer-events-auto"
+              >
+                <span>Open in Google Maps</span>
+                <ExternalLink className="w-4 h-4 group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform" />
+              </a>
             </div>
 
             <p className="text-orange-500 font-medium italic">
@@ -82,7 +82,7 @@ const OfficeSection: React.FC = () => {
             </p>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={smoothTransition}
@@ -98,10 +98,10 @@ const OfficeSection: React.FC = () => {
                 transition={{ duration: 0.8 }}
                 className="absolute inset-0"
               >
-                <img 
-                  src={officeImages[current]} 
-                  alt={`Office view ${current + 1}`} 
-                  className="w-full h-full object-cover transform transition-transform duration-[5s] hover:scale-105" 
+                <img
+                  src={officeImages[current]}
+                  alt="Nigerian food supplier Lagos - GLFI Office"
+                  className="w-full h-full object-cover transform transition-transform duration-[5s] hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
               </motion.div>
@@ -118,8 +118,8 @@ const OfficeSection: React.FC = () => {
 
             <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex space-x-2">
               {officeImages.map((_, i) => (
-                <button 
-                  key={i} 
+                <button
+                  key={i}
                   onClick={() => setCurrent(i)}
                   className={`h-1.5 rounded-full transition-all duration-300 ${i === current ? 'w-8 bg-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.8)]' : 'w-2 bg-white/20'}`}
                 />
