@@ -1,5 +1,8 @@
 import { MetadataRoute } from 'next';
 
+export const dynamic = 'force-dynamic';
+export const contentType = 'application/xml';
+
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://gracelogisticsfoodanditems.vercel.app';
 
