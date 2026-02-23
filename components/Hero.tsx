@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 
 const slides = [
   {
@@ -48,25 +49,25 @@ const Hero: React.FC = () => {
           transition={smoothTransition}
           className="absolute inset-0"
         >
-          <div
-            className="absolute inset-0 bg-cover bg-center scale-105"
-            role="img"
-            aria-label={slides[current].title}
-            style={{ backgroundImage: `url(${slides[current].image})` }}
-          >
+          <div className="absolute inset-0 overflow-hidden">
+            <Image
+              src={slides[current].image}
+              alt={`Grace Logistics - ${slides[current].title} - Global food shipping and sourcing experts`}
+              fill
+              priority={current === 0}
+              className="object-cover scale-105"
+              sizes="100vw"
+            />
+
             <div className="absolute inset-0 bg-gradient-to-r from-black via-black/60 to-transparent" />
           </div>
 
           <div className="relative h-full flex items-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-2xl">
-              <motion.div
-                initial={{ y: 30, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ ...smoothTransition, delay: 0.3 }}
-                className="inline-block px-3 py-1 bg-blue-600/20 border border-blue-500/30 rounded-full text-blue-400 text-sm font-semibold mb-6 tracking-wider uppercase"
-              >
-                {slides[current].accent}
-              </motion.div>
+              <div className="flex items-center space-x-4 mb-6">
+                <div className="w-1 h-8 bg-blue-600 shadow-[0_0_15px_rgba(37,99,235,0.6)] rounded-full" />
+                <span className="text-blue-400 text-sm font-bold uppercase tracking-[0.3em]">{slides[current].accent}</span>
+              </div>
 
               <motion.h1
                 initial={{ y: 40, opacity: 0 }}

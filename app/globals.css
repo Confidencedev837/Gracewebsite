@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-250px * 4));
+  }
+}
+
+.animate-scroll {
+  animation: scroll 30s linear infinite;
+}
+
+.animate-scroll-pause:hover {
+  animation-play-state: paused;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-inter), sans-serif;
+    background-color: #05050a;
+    color: #ffffff;
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .neon-glow-blue {
+    text-shadow: 0 0 10px rgba(59, 130, 246, 0.5), 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+
+  .neon-border-blue {
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.2);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+  }
+
+  .neumorph-card {
+    background: #0a0a14;
+    box-shadow: 5px 5px 15px #020205, -5px -5px 15px #121223;
+    border-radius: 12px;
+  }
+
+  .neumorph-inset {
+    background: #0a0a14;
+    box-shadow: inset 3px 3px 7px #020205, inset -3px -3px 7px #121223;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #05050a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e1e2d;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3b82f6;
+}

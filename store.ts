@@ -12,11 +12,11 @@ const PRODUCTS_COLLECTION_ID = '67ee54fb003b923989d7';
 const BUYERS_COLLECTION_ID = '67f3a5d9001e4cf6985c';
 const COMMENTS_COLLECTION_ID = '67f3a65900269da4de11';
 // CORRECT STORAGE BUCKET ID provided by user
-const BUCKET_ID = '67ee55c3002f451258a0'; 
+const BUCKET_ID = '67ee55c3002f451258a0';
 
 const client = new Client()
-    .setEndpoint(APPWRITE_ENDPOINT)
-    .setProject(PROJECT_ID);
+  .setEndpoint(APPWRITE_ENDPOINT)
+  .setProject(PROJECT_ID);
 
 const databases = new Databases(client);
 const storage = new Storage(client);
@@ -36,12 +36,14 @@ export const getFoodItems = async (): Promise<FoodItem[]> => {
     const response = await databases.listDocuments(DATABASE_ID, PRODUCTS_COLLECTION_ID, [
       Query.orderDesc('$createdAt')
     ]);
-    
+
     logger.log("Documents found:", response.documents.length);
-    
+
     return response.documents.map((doc: any) => {
       const rawImageIds = doc.imageIds || [];
-      const imageUrls = rawImageIds.map((fileId: string) => {
+      const rawVideoIds = doc.videoIds || [];
+
+      const getUrls = (ids: string[]) => ids.map((fileId: string) => {
         try {
           const url = storage.getFileView(BUCKET_ID, fileId);
           return url.toString();
@@ -57,25 +59,35 @@ export const getFoodItems = async (): Promise<FoodItem[]> => {
         description: doc.description,
         category: "Nigerian Food",
         price: doc.price,
-        images: imageUrls,
-        imageIds: rawImageIds
+        images: getUrls(rawImageIds),
+        imageIds: rawImageIds,
+        videos: getUrls(rawVideoIds),
+        videoIds: rawVideoIds
       };
     });
+
   } catch (error) {
     logger.error("Failed to fetch products", error);
     return [];
   }
 };
 
-export const saveProduct = async (data: { name: string, description: string, price: number, files: File[] }) => {
+export const saveProduct = async (data: { name: string, description: string, price: number, imageFiles: File[], videoFiles: File[] }) => {
   try {
     logger.log("Starting product save...", data.name);
-    
+
     const imageIds: string[] = [];
-    for (const file of data.files) {
-      logger.log(`Uploading file: ${file.name}`);
+    for (const file of data.imageFiles) {
+      logger.log(`Uploading image: ${file.name}`);
       const uploaded = await storage.createFile(BUCKET_ID, ID.unique(), file);
       imageIds.push(uploaded.$id);
+    }
+
+    const videoIds: string[] = [];
+    for (const file of data.videoFiles) {
+      logger.log(`Uploading video: ${file.name}`);
+      const uploaded = await storage.createFile(BUCKET_ID, ID.unique(), file);
+      videoIds.push(uploaded.$id);
     }
 
     const result = await databases.createDocument(
@@ -87,7 +99,8 @@ export const saveProduct = async (data: { name: string, description: string, pri
         name: data.name,
         description: data.description,
         price: data.price,
-        imageIds: imageIds
+        imageIds: imageIds,
+        videoIds: videoIds
       }
     );
     logger.log("Product saved successfully", result.$id);
@@ -98,26 +111,29 @@ export const saveProduct = async (data: { name: string, description: string, pri
   }
 };
 
-export const deleteProduct = async (id: string, imageIds: string[]) => {
+
+export const deleteProduct = async (id: string, imageIds: string[], videoIds: string[] = []) => {
   try {
     logger.log(`Initiating delete for doc: ${id}`);
-    
+
     // 1. Delete database document first
     await databases.deleteDocument(DATABASE_ID, PRODUCTS_COLLECTION_ID, id);
     logger.log(`Document ${id} deleted from database.`);
-    
+
     // 2. Cleanup storage files
-    if (imageIds && imageIds.length > 0) {
-      for (const imgId of imageIds) {
+    const allFileIds = [...(imageIds || []), ...(videoIds || [])];
+    if (allFileIds.length > 0) {
+      for (const fileId of allFileIds) {
         try {
-          await storage.deleteFile(BUCKET_ID, imgId);
-          logger.log(`Storage file ${imgId} deleted.`);
+          await storage.deleteFile(BUCKET_ID, fileId);
+          logger.log(`Storage file ${fileId} deleted.`);
         } catch (e) {
-          logger.error(`Failed to delete storage file ${imgId}`, e);
+          logger.error(`Failed to delete storage file ${fileId}`, e);
         }
       }
     }
-    
+
+
     logger.log("Full delete sequence completed.");
     return true;
   } catch (error) {

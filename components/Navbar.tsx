@@ -1,12 +1,15 @@
+"use client";
 
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Menu, X, LogIn } from 'lucide-react';
+import Image from 'next/image';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const location = useLocation();
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,18 +27,19 @@ const Navbar: React.FC = () => {
     { name: 'Contact Us', path: '/contact' },
   ];
 
-  const isActive = (path: string) => location.pathname === path;
+  const isActive = (path: string) => pathname === path;
 
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-[#05050a]/90 backdrop-blur-md py-3 shadow-lg' : 'bg-transparent py-5'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          <Link to="/" className="flex items-center space-x-3 group">
+          <Link href="/" className="flex items-center space-x-3 group">
             <div className="relative w-12 h-12">
-              <img
+              <Image
                 src="/image/logoaslouseasfavicon.jpeg"
                 alt="GLFI Logo"
-                className="w-full h-full object-cover rounded-xl shadow-lg group-hover:scale-105 transition-transform duration-300"
+                fill
+                className="object-cover rounded-xl shadow-lg group-hover:scale-105 transition-transform duration-300"
               />
               <div className="absolute inset-0 rounded-xl shadow-[0_0_15px_rgba(59,130,246,0.3)] group-hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] transition-all" />
             </div>
@@ -53,14 +57,14 @@ const Navbar: React.FC = () => {
             {navLinks.map((link) => (
               <Link
                 key={link.name}
-                to={link.path}
+                href={link.path}
                 className={`text-sm font-medium transition-colors ${isActive(link.path) ? 'text-blue-400' : 'text-gray-300 hover:text-white'}`}
               >
                 {link.name}
               </Link>
             ))}
             <Link
-              to="/admin"
+              href="/admin"
               className="flex items-center space-x-1 px-4 py-2 rounded-full border border-blue-500/50 hover:bg-blue-500/10 transition-all text-sm font-semibold"
             >
               <LogIn className="w-4 h-4" />
@@ -81,7 +85,7 @@ const Navbar: React.FC = () => {
           {navLinks.map((link) => (
             <Link
               key={link.name}
-              to={link.path}
+              href={link.path}
               onClick={() => setIsOpen(false)}
               className="block px-3 py-4 text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-md"
             >
@@ -89,7 +93,7 @@ const Navbar: React.FC = () => {
             </Link>
           ))}
           <Link
-            to="/admin"
+            href="/admin"
             onClick={() => setIsOpen(false)}
             className="flex items-center space-x-2 px-3 py-4 text-base font-medium text-blue-400"
           >

@@ -6,8 +6,11 @@ export interface FoodItem {
   category: string;
   images: string[];
   imageIds?: string[];
+  videos?: string[];
+  videoIds?: string[];
   price?: number;
 }
+
 
 export interface Testimonial {
   id: number;

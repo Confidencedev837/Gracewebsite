@@ -2,11 +2,13 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MapPin, ExternalLink, ChevronLeft, ChevronRight, Building2 } from 'lucide-react';
+import Image from 'next/image';
 
 const officeImages = [
   '/image/office1.jpeg',
-  '/image/office1.jpeg',
-  '/image/office1.jpeg',
+  '/image/office2.jpeg',
+  '/image/office3.jpeg',
+  "/image/office4.jpeg",
 
 ];
 
@@ -41,9 +43,12 @@ const OfficeSection: React.FC = () => {
             viewport={{ once: true }}
             className="space-y-8"
           >
-            <div className="inline-flex items-center space-x-2 px-4 py-2 bg-blue-600/10 border border-blue-500/20 rounded-full text-blue-400 text-sm font-bold uppercase tracking-widest shadow-lg">
-              <Building2 className="w-4 h-4" />
-              <span>Visit Us In Person</span>
+            <div className="flex items-center space-x-5">
+              <div className="w-1 h-10 bg-blue-600 shadow-[0_0_15px_rgba(37,99,235,0.6)] rounded-full" />
+              <div className="flex flex-col">
+                <span className="text-blue-400 text-[10px] font-bold uppercase tracking-[0.3em]">Visit Us</span>
+                <span className="text-gray-600 text-[9px] uppercase tracking-widest">Lagos Headquarters</span>
+              </div>
             </div>
 
             <h2 className="text-4xl md:text-6xl font-bold leading-tight">
@@ -98,10 +103,11 @@ const OfficeSection: React.FC = () => {
                 transition={{ duration: 0.8 }}
                 className="absolute inset-0"
               >
-                <img
+                <Image
                   src={officeImages[current]}
                   alt="Nigerian food supplier Lagos - GLFI Office"
-                  className="w-full h-full object-cover transform transition-transform duration-[5s] hover:scale-105"
+                  fill
+                  className="object-cover transform transition-transform duration-[5s] hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
               </motion.div>

@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
 
 const Footer: React.FC = () => {
@@ -11,8 +10,7 @@ const Footer: React.FC = () => {
           <div className="space-y-6">
             <div className="flex items-center space-x-2">
               {/* logo */}
-              <div className="w-8 h-8 bg-blue-600 rounded flex items-center justify-center font-bold text-white">P</div>
-              <span className="text-xl font-bold">Grace Logistics Foods and Items</span>
+              <img src="/image/logoaslouseasfavicon.jpeg" alt="Grace Logistics Logo" className="h-10 w-auto object-contain rounded-full" />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
               Global logistics experts specializing in Nigerian foodstuff shipping and multi-modal cargo solutions. Your trusted bridge to the world.
@@ -33,11 +31,11 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-white font-bold mb-6">Quick Links</h3>
             <ul className="space-y-4 text-sm text-gray-400">
-              <li><Link to="/" className="hover:text-blue-400 transition-colors">Home</Link></li>
-              <li><Link to="/about" className="hover:text-blue-400 transition-colors">About Us</Link></li>
-              <li><a href="#services" className="hover:text-blue-400 transition-colors">Services</a></li>
-              <li><a href="#foodstuff" className="hover:text-blue-400 transition-colors">Foodstuff Shipping</a></li>
-              <li><Link to="/contact" className="hover:text-blue-400 transition-colors">Contact Us</Link></li>
+              <li><Link href="/" className="hover:text-blue-400 transition-colors">Home</Link></li>
+              <li><Link href="/about" className="hover:text-blue-400 transition-colors">About Us</Link></li>
+              <li><a href="/#services" className="hover:text-blue-400 transition-colors">Services</a></li>
+              <li><a href="/#foodstuff" className="hover:text-blue-400 transition-colors">Foodstuff Shipping</a></li>
+              <li><Link href="/contact" className="hover:text-blue-400 transition-colors">Contact Us</Link></li>
             </ul>
           </div>
 
@@ -66,7 +64,7 @@ const Footer: React.FC = () => {
               <li className="flex items-center space-x-3">
                 <MapPin className="w-4 h-4 text-blue-500" />
                 <span>No 12 Afari Ogun steet,
-                   Oshodi Lagos, Nigeria</span>
+                  Oshodi Lagos, Nigeria</span>
               </li>
             </ul>
           </div>
