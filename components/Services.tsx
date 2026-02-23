@@ -4,6 +4,8 @@ import React, { useState } from 'react';
 import { Plane, Ship, Package, ChevronDown, ChevronUp, CheckCircle2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
 
 const FAQItem: React.FC<{ question: string; answer: string }> = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,25 +41,28 @@ const Services: React.FC = () => {
       icon: <Plane className="w-10 h-10 text-blue-500" />,
       title: 'Air Cargo Service',
       image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1920&q=80",
-      description: 'We leverage top-tier air freight partners like DHL to ensure your goods reach any destination in the world within 3-7 business days.',
+      description: 'We leverage top-tier air freight partners like DHL to ensure your goods reach any destination in the world within 3-7 business days. A faster alternative to our Sea Freight solutions.',
       process: ['Pickup & Verification', 'Customs Documentation', 'Priority Flight Booking', 'Last-mile Delivery'],
-      benefits: 'Perfect for urgent shipments and perishables.'
+      benefits: 'Perfect for urgent shipments and perishables.',
+      link: '/contact?service=air-cargo'
     },
     {
       icon: <Ship className="w-10 h-10 text-blue-500" />,
       title: 'Sea Cargo Services',
       image: "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?q=80&w=1200&auto=format&fit=crop",
-      description: 'The most cost-effective method for bulk trade. We manage full container loads (FCL) and less than container loads (LCL).',
+      description: 'The most cost-effective method for bulk trade. We manage full container loads (FCL) and less than container loads (LCL), perfectly complementing our Air Cargo routes.',
       process: ['Container Consolidation', 'Port Logistics', 'Ocean Transit Management', 'Destination Handling'],
-      benefits: 'Best for heavy machinery and commercial inventory.'
+      benefits: 'Best for heavy machinery and commercial inventory.',
+      link: '/contact?service=sea-cargo'
     },
     {
       icon: <Package className="w-10 h-10 text-blue-500" />,
       title: 'Local Food Sourcing',
       image: "https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1200&auto=format&fit=crop",
-      description: 'We source directly from local farmers and markets across Nigeria. From Yam to Egusi, we ensure authenticity and quality.',
+      description: 'We source directly from local farmers and markets across Nigeria. From Yam to Egusi, we ensure authenticity and quality for every shipment.',
       process: ['Direct Farm Sourcing', 'Quality Inspection', 'Export-Grade Packaging', 'Compliance Labeling'],
-      benefits: 'Supporting local economies, feeding the diaspora.'
+      benefits: 'Supporting local economies, feeding the diaspora.',
+      link: '/food-shipping'
     }
   ];
 
@@ -152,6 +157,23 @@ const Services: React.FC = () => {
                 <div className="p-5 sm:p-6 bg-white/5 rounded-2xl border border-white/10 italic text-gray-400 shadow-inner text-sm sm:text-base">
                   &ldquo; {service.benefits} &rdquo;
                 </div>
+                {service.title === 'Local Food Sourcing' ? (
+                  <Link
+                    href="/food-shipping"
+                    className="inline-flex items-center space-x-2 text-blue-500 font-bold hover:text-blue-400 transition-all group pt-4"
+                  >
+                    <span>View Authentic Foodstuff Inventory</span>
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                ) : (
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center space-x-2 text-blue-500 font-bold hover:text-blue-400 transition-all group pt-4"
+                  >
+                    <span>Request a Quote for {service.title}</span>
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                )}
               </div>
             </motion.div>
           ))}

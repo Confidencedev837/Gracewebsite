@@ -10,7 +10,8 @@ import Testimonials from '../components/Testimonials';
 import OfficeSection from '../components/OfficeSection';
 import CompanyLogos from '../components/CompanyLogos';
 import GlobalRouteMap from '../components/GlobalRouteMap';
-import { Map, Globe } from 'lucide-react';
+import Link from 'next/link';
+import { Map, Globe, ArrowRight } from 'lucide-react';
 
 const smoothTransition = { duration: 1.5, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] };
 
@@ -38,8 +39,15 @@ export default function Home() {
                                 From All 36 States <br /><span className="text-blue-500">To Your Doorstep Anywhere in the World</span>
                             </h2>
                             <p className="text-xl text-gray-400 leading-relaxed font-light">
-                                We believe that distance shouldn't separate you from the authentic taste of home. Our network of local agents traverses the vibrant markets of Nigeria—from the spice hubs of Kano to the palm oil regions of Delta—providing the best <strong>Nigerian food shipping to UK</strong>, USA, and beyond.
+                                We believe that distance shouldn't separate you from the authentic taste of home. Our network of local agents traverses the vibrant markets of Nigeria—from the spice hubs of Kano to the palm oil regions of Delta—providing the best <Link href="/food-shipping" className="text-blue-400 hover:text-blue-300 font-medium underline decoration-blue-500/30 underline-offset-4 transition-all">Nigerian food shipping to UK</Link>, USA, and beyond.
                             </p>
+                            <Link
+                                href="/about"
+                                className="inline-flex items-center space-x-2 text-blue-500 font-bold hover:text-blue-400 transition-all group"
+                            >
+                                <span>Explore Nigerian Food Sourcing Stories</span>
+                                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                            </Link>
                             <div className="grid grid-cols-2 gap-12">
                                 <div className="space-y-4">
                                     <Map className="w-10 h-10 text-orange-500" />
@@ -102,6 +110,34 @@ export default function Home() {
             <Services />
 
             <GlobalRouteMap />
+
+            {/* Global Shipment CTA Section */}
+            <section className="py-24 bg-[#05050a] border-y border-white/5 relative overflow-hidden">
+                <div className="absolute inset-0 bg-blue-600/5 opacity-30 blur-3xl pointer-events-none" />
+                <div className="max-w-7xl mx-auto px-4 text-center relative z-10">
+                    <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tight">
+                        Ready to <span className="text-blue-500">Secure Your Global Shipment?</span>
+                    </h2>
+                    <p className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
+                        Whether you need <Link href="/services" className="text-blue-400 hover:underline">Priority Air Cargo</Link> or cost-effective <Link href="/services" className="text-blue-400 hover:underline">International Sea Freight</Link>, Grace Logistics delivers with export-compliant precision.
+                    </p>
+                    <div className="flex flex-col sm:flex-row justify-center gap-4">
+                        <Link
+                            href="/contact"
+                            className="px-10 py-5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-2xl transition-all shadow-[0_0_25px_rgba(37,99,235,0.4)] flex items-center justify-center space-x-2"
+                        >
+                            <span>Request a Custom Logistics Quote</span>
+                            <ArrowRight className="w-5 h-5" />
+                        </Link>
+                        <Link
+                            href="/services"
+                            className="px-10 py-5 bg-white/5 hover:bg-white/10 border border-white/10 text-white font-bold rounded-2xl transition-all backdrop-blur-sm"
+                        >
+                            Explore Logistics Services
+                        </Link>
+                    </div>
+                </div>
+            </section>
 
             <div className="py-24 px-4 max-w-7xl mx-auto text-center flex flex-col items-center">
                 <div className="w-px h-16 bg-gradient-to-b from-blue-600 to-transparent mb-8" />

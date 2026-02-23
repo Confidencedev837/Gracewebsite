@@ -2,8 +2,9 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { Target, Heart, Shield, Award, Zap } from 'lucide-react';
+import { Target, Heart, Shield, Award, Zap, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 const smoothTransition = { duration: 1.2, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] };
 
@@ -67,10 +68,10 @@ export default function About() {
                                 Your Trusted <span className="text-blue-500">Food Sourcing Agent</span> in Nigeria
                             </h2>
                             <p className="text-gray-400 text-base sm:text-lg leading-relaxed">
-                                GFI LIMITED (Grace Logistics Foods and Items) was founded on the principles of trust, efficiency, and reliability. As a premier <strong className="text-white font-medium">Nigerian food supplier in Lagos</strong>, we bridge the gap between local farmers and the global market.
+                                GFI LIMITED (Grace Logistics Foods and Items) was founded on the principles of trust, efficiency, and reliability. As a premier <strong className="text-white font-medium">Nigerian food supplier in Lagos</strong>, we bridge the gap between local farmers and the global market by providing <Link href="/food-shipping" className="text-blue-400 hover:underline underline-offset-4 font-medium">export-compliant food shipping</Link> to thousands of families.
                             </p>
                             <p className="text-gray-500 text-base sm:text-lg leading-relaxed font-light">
-                                Our mission is to simplify logistics. Whether it's a small box of spices for a family in London or several tons of industrial cargo, we treat every shipment with the same professional precision and Nigerian warmth.
+                                Our mission is to simplify logistics. Whether it's a small box of spices for a family in London or several tons of industrial cargo, we treat every shipment from our <Link href="/contact" className="text-blue-400 hover:underline font-medium">Lagos Logistics Hub</Link> with the same professional precision and Nigerian warmth.
                             </p>
 
                             <div className="grid grid-cols-3 gap-3 pt-2">
@@ -152,6 +153,37 @@ export default function About() {
                         ))}
                     </div>
                 </div>
+
+                {/* Final About CTA */}
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    className="mt-24 p-12 bg-gradient-to-br from-[#0a0a14] to-[#05050a] rounded-[2.5rem] border border-white/5 text-center relative overflow-hidden"
+                >
+                    <div className="absolute inset-0 bg-blue-600/5 blur-3xl" />
+                    <div className="relative z-10">
+                        <h3 className="text-3xl md:text-4xl font-bold mb-6">Ready to Experience <span className="text-blue-500">Premium Logistics?</span></h3>
+                        <p className="text-gray-400 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
+                            Discover how our 11+ years of expertise can simplify your international trade. From authentic food sourcing to global cargo delivery.
+                        </p>
+                        <div className="flex flex-col sm:flex-row justify-center gap-4">
+                            <Link
+                                href="/services"
+                                className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl transition-all flex items-center justify-center space-x-2 shadow-lg shadow-blue-600/20"
+                            >
+                                <span>Verify Our Shipping Services</span>
+                                <ArrowRight className="w-5 h-5" />
+                            </Link>
+                            <Link
+                                href="/contact"
+                                className="px-8 py-4 bg-white/5 hover:bg-white/10 border border-white/10 text-white font-bold rounded-xl transition-all"
+                            >
+                                Get in Touch
+                            </Link>
+                        </div>
+                    </div>
+                </motion.div>
 
             </div>
         </div>
