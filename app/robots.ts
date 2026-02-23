@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
             allow: '/',
             disallow: '/admin/',
         },
-        sitemap: 'https://gracelogisticsfoodanditems.vercel.app/sitemap.xml',
+        sitemap: 'https://gracelogisticsfoodanditems.vercel.app/sitema.xml',
     };
 }
